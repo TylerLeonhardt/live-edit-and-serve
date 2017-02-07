@@ -4,14 +4,14 @@ import fs = require('fs');
 const app = express();
 
 app.use(bodyParser.json());
-app.use(express.static('build/index'));
+app.use(express.static(`${__dirname}/index`));
 
-let DATA = require('./data/data.json');
+let DATA = require(`${__dirname}/data/data.json`);
 
 app.post('/api/write', (req, res, next) =>{
     let hasError = false;
 
-    fs.writeFile('build/data/data.json', JSON.stringify(req.body), (err) => {
+    fs.writeFile(`${__dirname}/data/data.json`, JSON.stringify(req.body), (err) => {
         if(err){
             hasError = true;
             console.log(err);
@@ -58,7 +58,7 @@ app.get('/api/fetch/*', (req, res) => {
 });
 
 app.listen(process.env.port || process.env.PORT || 3000, () => {
-  console.log('Example app listening on port 3000!');
+  console.log('Example app listening!');
 })
 
 function getPathArray(url : string){
