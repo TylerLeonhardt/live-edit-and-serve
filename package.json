@@ -1,7 +1,7 @@
 {
   "name": "live-edit-and-serve",
   "version": "0.0.1",
-  "description": "",
+  "description": "Live Edit and Serve a json file as a tree of information!",
   "main": "build/app.js",
   "scripts": {
     "prestart": "npm install && gulp build",
@@ -9,7 +9,7 @@
     "local": "node build/app.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@types/body-parser": "0.0.33",
     "@types/express": "^4.0.35",
